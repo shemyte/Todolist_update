@@ -114,3 +114,75 @@ input[type="checkbox"] {
     border: 2px solid var(--business);
     box-shadow: var(--business-glow);
 }
+.bubble.personal{
+    border-color: var(--personal);
+    box-shadow: var(--personal-glow);
+}
+/* adding a check */
+.bubble::after{
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: var(--business);
+    box-shadow: var(--business-glow);
+    border-radius: 50%;
+    transition: 0.5 ease-in-out;
+}
+.bubble.personal::after{
+    background-color: var(--personal);
+    box-shadow: var(--personal-glow);
+}
+/* to toggle them on (~ is next to)*/
+input:checked ~ .bubble::after{
+    width: 10px;
+    height: 10px;
+    opacity: 1; 
+}
+.create-todo .options label div{
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+/* submit button */
+.create-todo input[type="submit"] {
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: var(--personal-glow);
+    cursor: pointer;
+    transition: 0.2 ease-in-out;
+}
+
+.create-todo input[type="submit"]:hover {
+    opacity: 0.75;
+}
+
+/* todo lists */
+.todo-list .list{
+    margin: 1rem 0rem;
+}
+
+.todo-list .todo-item{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.todo-item label{
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.todo-item .todo-content{
+    flex: 1 1 0%;
+}
