@@ -165,6 +165,7 @@ input:checked ~ .bubble::after{
 /* todo lists */
 .todo-list .list{
     margin: 1rem 0rem;
+    display: flex;
 }
 
 .todo-list .todo-item{
